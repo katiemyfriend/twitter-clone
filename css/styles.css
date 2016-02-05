@@ -20,6 +20,8 @@ body {
 }
 
 /* GLOBAL ELEMENTS */
+
+
 .avatar {
 	width: 32px;
 	height: 32px;
@@ -128,6 +130,7 @@ body {
 		box-sizing: border-box;
 	}
 		#tweet-controls {
+			display: none;
 			text-align: right;
 		}
 			#tweet-controls div {
@@ -138,6 +141,7 @@ body {
 				color: #999;
 				text-shadow: 0 1px 1px rgba(255,255,255,.75);
 			}
+
 
 /* TWEET */
 .tweet {
@@ -258,5 +262,3 @@ body {
 				top: 0;
 				left: 0;
 			}
-
-
