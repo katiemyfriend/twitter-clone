@@ -28,38 +28,46 @@ $(document).ready(function() {
 
   //Tweet event
 
-  $('#tweet-submit').click(function (event) {
+  $('#tweet-submit').click(function () {
     var tweet = $('#new-tweet-textarea').val();
     var userName = 'Katie Slater';
     if(!tweet.length) return;
 
-  var tweetHtml =  '<div class="tweet">'
-                  + '<div class="content">'
-                  + '<img class="avatar" src="img/damenleeturks.jpg" />'
-                  + '<strong class="fullname">' + userName + '</strong>'
-                  + '<span class="username">@katierocks</span>'
-                  + '<p class="tweet-text">' + tweet + '</p>'
-                  + '<div class="tweet-actions">'
-                  + '<ul><li><span class="icon action-reply"></span> Reply</li><li><span class="icon action-retweet"></span> Retweet</li><li><span class="icon action-favorite"></span> Favorite</li><li><span class="icon action-more"></span> More</li></ul></div>'
-                  + '<div class="stats"><div class="retweets"><p class="num-retweets">30</p><p>RETWEETS</p></div><div class="favorites"><p class="num-favorites">6</p><p>FAVORITES</p></div><div class="users-interact"><div>'
-                  + '<img src="img/alagoon.jpg" /><img src="img/vklimenko.jpg" /></div></div></div>'
-                  + '<div class="reply"><img class="avatar" src="img/alagoon.jpg" /><textarea class="tweet-compose" placeholder="Reply to @mybff"/></textarea></div></div></div>'
+
+
+    var tweetHTML = '<div class="tweet">' +
+						'<div class="content">' +
+							'<img class="avatar" src="img/alagoon.jpg" />' +
+							'<strong class="fullname">' + userName + '</strong>' +
+							'<span class="username"> @katierocks</span>' +
+                            '<p class="tweet-text">' + tweet + '</p>' +
+							'<div class="tweet-actions">' +
+								'<ul><li><span class="icon action-reply"></span> Reply</li><li><span class="icon action-retweet"></span> Retweet</li><li><span class="icon action-favorite"></span> Favorite</li><li><span class="icon action-more"></span> More</li></ul>'
+							+ '</div>'
+					+ '</div>';
 
 
 
 
 
-
-    var tweetHTML = '<div>' + userName + '</div>';
     $('#stream').prepend(tweetHTML);
 
-    $('#new-tweet-textarea').nal('');
+    $('#new-tweet-textarea').val('');
+    // $('#new-tweet-textarea').css('height', '2.5em');
+    $('#tweet-controls').toggle(false);
     $('#char-count').text(140);
   })
 
 
+  // $('.tweet').hover(function() {
+  //   $(this).find('.text-actions').css('visibility', 'visible');
+  // }, function() {
+  //   $(this).find('.text-actions').css('visibility', 'hidden');
+  // });
 
-
+  $('.tweet').click(function() {
+    $(this).find('.stats, .reply').slideDown(200);
+  });
 
 
 
